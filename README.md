@@ -8,3 +8,10 @@ This is part of my developing interest in the interface between software, mathem
 ## Index Simplifier
 
 This script automatically simplifies algebraic expressions using the index laws (Pure Mathematics Year 1, Exercise 1A).
+
+Index laws:
+
+$$ a^m \times a^n = a^{m+n} $$
+$$ a^m \div a^n = a^{m - n} $$
+$$ (ab)^n = a^n b ^n $$
+$$ (a^n)^m = a^{nm} $$
