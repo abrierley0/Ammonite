@@ -1,7 +1,7 @@
 import string
 
 """
-PURPOSE: This script simplifies alegebraic expressions containing indices.
+PURPOSE: This script simplifies alegebraic expressions containing indices
 
 AUTHOR: Mr Adam James Brierley
 
@@ -12,6 +12,7 @@ def main():
 
     expression = input("Provide expression: ")
 
+    # Read the data from the algebraic expression
     index_list, var_list, coeff_list, op_list = expression_reader(expression)
 
     print(f"Index list: {index_list}")
@@ -19,6 +20,8 @@ def main():
     print(f"Coefficient list: {coeff_list}")
     print(f"Operations list: {op_list}")
 
+    # Simplify the algebraic expression
+    simplifier(op_list, coeff_list, expression)
 
 
 def expression_reader(expression):
@@ -38,7 +41,7 @@ def expression_reader(expression):
 
         if char in string.ascii_letters:
             var_list.append(char)
-            coeff_list.append(expression[counter-1])
+            coeff_list.append(expression[counter-2])
 
         if char == "/" or char == "*":
             op_list.append(char)
@@ -47,11 +50,11 @@ def expression_reader(expression):
 
     return index_list, var_list, coeff_list, op_list
 
-
-
-
-
-
+def simplifier(op_list, coeff_list, expression):
+    
+    # Division operation(s)
+    div_index = op_list.index("/")
+    div_result = int(coeff_list[div_index]) / int((coeff_list[div_index+1]))
 
 
 main()
